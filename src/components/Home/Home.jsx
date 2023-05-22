@@ -5,7 +5,6 @@ import TrendMovies from "components/TrendMovies/TrendMovies";
 
 const Home = () => {
     const [data, setData] = useState([]);
-console.log(data);
     useEffect(()=>{
         trendsMovie().then(data=>setData(data.results));
         

@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 const { useParams } = require('react-router-dom')
 
-export const Cast = ()=>{
+const Cast = ()=>{
     const {movieId} = useParams()
 
 // useEffect(()=>{
@@ -10,3 +10,4 @@ export const Cast = ()=>{
 
     return  <div>Cast: {movieId}</div>
 }
+export default Cast;

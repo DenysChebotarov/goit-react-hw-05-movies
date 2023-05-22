@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 const { useParams } = require('react-router-dom')
 
-export const Reviews = ()=>{
+const Reviews = ()=>{
     const {movieId} = useParams();
 
     // useEffect(()=>{
@@ -10,3 +10,4 @@ export const Reviews = ()=>{
 
     return  <div>Reviews: {movieId}</div>
 }
+export default Reviews;

@@ -1,8 +1,12 @@
 // import { useEffect } from "react";
-import { useParams } from 'react-router-dom';
-import { Link, Outlet } from 'react-router-dom';
+import { Suspense } from "react";
+import { useRef } from 'react';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
+  
+  const location = useLocation()
+  const backLinkLocation = useRef(location.state?.from ?? '/movies')
   const { movieId } = useParams();
   // useEffect(()=>{
 
@@ -11,6 +15,7 @@ const MovieDetails = () => {
   return (
     <>
       <h1>MovieDetails: {movieId}</h1>
+      <Link to={backLinkLocation.current}>Go Back</Link>
       <ul>
         <li>
           <Link to="cast">Cast</Link>
@@ -19,7 +24,9 @@ const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
