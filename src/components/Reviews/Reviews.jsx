@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { searchReviews } from 'components/Api/ApiMovie';
-import CastReviews from 'components/CastReviews/CastReviews';
+import CastReviews from 'components/ReviewsCard/ReviewsCard';
 const { useParams } = require('react-router-dom');
 
 const Reviews = () => {

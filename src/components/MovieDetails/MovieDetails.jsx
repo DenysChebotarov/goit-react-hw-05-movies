@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { searchMovieId } from 'components/Api/ApiMovie';
 import MovieCard from 'components/MovieCard/MovieCard';
+import css from './MovieDetails.module.css'
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -20,7 +21,7 @@ const MovieDetails = () => {
         <>
           <Link to={backLinkLocation.current}>Go Back</Link>
 <MovieCard movie = {movie}/>
-          <ul>
+          <ul className={css.movieList}>
             <li>
               <Link to="cast">Cast</Link>
             </li>

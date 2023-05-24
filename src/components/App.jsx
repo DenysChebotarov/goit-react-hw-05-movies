@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 // import Home from './Home/Home';
 // import Movies from './Movies/Movies';
 // import MovieDetails from './MovieDetails/MovieDetails';

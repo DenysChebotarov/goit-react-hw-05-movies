@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
+import css from './searchForm.module.css'
 
 // import css from './Searchbar.module.css'
 
@@ -23,16 +24,17 @@ export default function SearchBar({ onSubmit }) {
     };
   
     return (
-      <header>
-        <form onSubmit={handleSubmit} >
+      <header className={css.searchbar}>
+        <form onSubmit={handleSubmit} className={css.searchForm} >
           <input
+          className={css.searchForm_input}
             type="text"
             name="name"
             value={movieName}
             onChange={handleNameChange}
             placeholder="Search movies"
           />
-          <button type="submit" >
+          <button className={css.searchForm_button} type="submit" >
             <BsSearch />
           </button>
         </form>
