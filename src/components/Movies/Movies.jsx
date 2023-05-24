@@ -1,38 +1,45 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
-// import { searchMovie } from "components/Api/ApiMovie";
+import { searchMovie } from "components/Api/ApiMovie";
+import SearchBar from "components/searchForm/searchForm";
+import TrendMovies from "components/TrendMovies/TrendMovies";
 
 const Movies = () => {
-  const [movies, setMovies] = useState([
-    'movie-1',
-    'movie-2',
-    'movie-3',
-    'movie-4',
-    'movie-5',
-  ]);
+  const [movies, setMovies] = useState([]);
+  const [movieName, setMovieName] = useState('')
   const location = useLocation()
   const [searchParams, setSearchParams] = useSearchParams();
   const movieId = searchParams.get('movieId') ?? '';
-  // useEffect(()=>{
-  //   searchMovie().then(movies=>setMovies(movies));
-  // }, [])
+  
+  useEffect(()=>{
+    if(movieName === ''){
+      return;
+    }
+    searchMovie(movieName).then(res=>{
+      if(res.results.length === 0){
+console.log('error');
+      }
+      setMovies(state=>[...res.results])
+    });
+  }, [movieName])
   const updateQueryString = evt => {
     if(evt.target.value === ''){
       return setSearchParams({})
     }
     setSearchParams({ movieId: evt.target.value });
   }
+  const onSubmit = (query)=> {
+setMovies([])
+setMovieName(query)
+  }
 
-  const visibleMovies = movies.filter(movie => movie.includes(movieId));
+  // const visibleMovies = movies.filter(movie => movie.includes(movieId));
   return (
     <div>
-      <input
-        type="text"
-        value={movieId}
-        onChange={updateQueryString}
-      />
-      <ul>
+      <SearchBar onSubmit={onSubmit}/>
+      {movies.length >0 && <TrendMovies data={movies}/>}
+      {/* <ul>
         {visibleMovies.map(movie => {
           return (
             <Link key={movie} to={`${movie}`} state={{ from: location}}>
@@ -40,7 +47,7 @@ const Movies = () => {
             </Link>
           );
         })}
-      </ul>
+      </ul> */}
     </div>
   );
 };
