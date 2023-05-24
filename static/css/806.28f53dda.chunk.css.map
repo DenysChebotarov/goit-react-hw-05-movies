@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/806.28f53dda.chunk.css","mappings":"AAAA,kCACI,eACJ","sources":["components/ReviewsCard/ReviewsCard.module.css"],"sourcesContent":[".reviewsList{\n    list-style: none;\n}"],"names":[],"sourceRoot":""}
