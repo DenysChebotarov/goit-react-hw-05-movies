@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from 'react'
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+// import { useLocation, useSearchParams } from 'react-router-dom';
 import { searchMovie } from "components/Api/ApiMovie";
 import SearchBar from "components/searchForm/searchForm";
 import TrendMovies from "components/TrendMovies/TrendMovies";
@@ -8,9 +8,9 @@ import TrendMovies from "components/TrendMovies/TrendMovies";
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [movieName, setMovieName] = useState('')
-  const location = useLocation()
-  const [searchParams, setSearchParams] = useSearchParams();
-  const movieId = searchParams.get('movieId') ?? '';
+  // const location = useLocation()
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const movieId = searchParams.get('movieId') ?? '';
   
   useEffect(()=>{
     if(movieName === ''){
@@ -23,12 +23,12 @@ console.log('error');
       setMovies(state=>[...res.results])
     });
   }, [movieName])
-  const updateQueryString = evt => {
-    if(evt.target.value === ''){
-      return setSearchParams({})
-    }
-    setSearchParams({ movieId: evt.target.value });
-  }
+  // const updateQueryString = evt => {
+  //   if(evt.target.value === ''){
+  //     return setSearchParams({})
+  //   }
+  //   setSearchParams({ movieId: evt.target.value });
+  // }
   const onSubmit = (query)=> {
 setMovies([])
 setMovieName(query)

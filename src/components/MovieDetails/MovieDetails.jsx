@@ -13,7 +13,7 @@ const MovieDetails = () => {
   
   useEffect(() => {
     searchMovieId(movieId).then(res => setMovie(res));
-  }, [movie, movieId]);
+  }, [movieId]);
   return (
     <>
       {movie && (
