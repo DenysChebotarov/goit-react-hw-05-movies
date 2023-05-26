@@ -43,6 +43,7 @@
   
   .searchForm_button:hover {
     opacity: 1;
+    background-color: #fff;
   }
   
   .searchForm_button_label {

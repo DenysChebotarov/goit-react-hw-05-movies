@@ -1,3 +1,30 @@
 .movieList{
     list-style: none;
 }
+.button{
+    padding: 10px 32px;
+    border: none;
+    text-decoration: none;
+    
+  
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(30 / 16);
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+
+    color: black;
+    background-color: var(--focus-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    border-radius: 4px;
+
+    
+
+  &:focus,
+  &:hover {
+    background-color: #3f51b5;
+  }
+}

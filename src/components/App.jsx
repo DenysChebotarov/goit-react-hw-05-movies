@@ -8,8 +8,8 @@ import { Layout } from './Layout/Layout';
 // import { Reviews } from './Reviews/Reviews';
 // import { Cast } from './Cast/Cast';
 
-const Home = lazy(() => import("./Home/Home"));
-const Movies = lazy(() => import("./Movies/Movies"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const Movies = lazy(() => import("../pages/Movies/Movies"));
 const MovieDetails = lazy(() => import("./MovieDetails/MovieDetails"));
 const Reviews = lazy(() => import("./Reviews/Reviews"));
 const Cast = lazy(() => import("./Cast/Cast"));

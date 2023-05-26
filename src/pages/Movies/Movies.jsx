@@ -10,13 +10,10 @@ import MovieSearch from "components/MovieSearch/MovieSearch"
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
-  // const [movieName, setMovieName] = useState('')
-  
-
-  // const location = useLocation()
+ 
   const [searchParams, setSearchParams] = useSearchParams();
   const postQuery = searchParams.get('movie') || '';
-  console.log(movies);
+ 
   useEffect(()=>{
     if(postQuery === ''){
       return;
@@ -28,31 +25,18 @@ console.log('error');
       setMovies(state=>[...res.results])
     });
   }, [postQuery])
-  // const updateQueryString = evt => {
-  //   if(evt.target.value === ''){
-  //     return setSearchParams({})
-  //   }
- 
-  // }
+  
   const onSubmit = (query)=> {
 setMovies([])
 setSearchParams({ movie: query });
   }
 
-  // const visibleMovies = movies.filter(movie => movie.includes(movieId));
+  
   return (
     <div>
       <SearchBar onSubmit={onSubmit}/>
       {movies.length >0 && <MovieSearch data={movies}/>}
-      {/* <ul>
-        {visibleMovies.map(movie => {
-          return (
-            <Link key={movie} to={`${movie}`} state={{ from: location}}>
-              {movie}
-            </Link>
-          );
-        })}
-      </ul> */}
+     
     </div>
   );
 };

@@ -10,7 +10,7 @@ const Reviews = () => {
   useEffect(() => {
     searchReviews(movieId).then(res => setMovieReviews(res.results));
   }, [movieId]);
-  console.log(movieReviews);
+  
   return (
     <div>
       {movieReviews.length > 0 ? (

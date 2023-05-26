@@ -10,7 +10,6 @@ const [movieCast, setMovieCast] = useState(null)
 useEffect(()=>{
   searchCast(movieId).then(res=>setMovieCast(res.cast))
   }, [movieId])
-console.log(movieCast);
     return  <div>{movieCast && <CastCard movieCast = {movieCast}/>}</div>
 }
 export default Cast;
