@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/798.7372c587.chunk.css","mappings":"AAAA,8BACI,eAEJ","sources":["components/TrendMovies/TrendMovies.module.css"],"sourcesContent":[".movieList{\n    list-style: none;\n    \n}"],"names":[],"sourceRoot":""}
